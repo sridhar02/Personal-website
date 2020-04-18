@@ -21,23 +21,46 @@ const useIntroStyles = makeStyles({
   },
 });
 
+const useNavbarStyles = makeStyles({
+  root: {
+    display: "flex",
+    margin: "10px auto",
+    justifyContent: "space-between",
+  },
+  rightSide: {
+    margin: "0 15px",
+    textDecoration: "None",
+    color: "black",
+    fontSize: "20px",
+  },
+  main: {
+    display: "flex",
+    justifyContent: "end",
+  },
+});
 function Navabar() {
+  const classes = useNavbarStyles();
   return (
-    <div>
-      <div>
-        <a href="/">Home </a>
-      </div>
-      <div>
-        <a href="#skills">Skills</a>
-      </div>
-      <div>
-        <a href="#Projects">Projects</a>
-      </div>
-      <div>
-        <a href="#Contact">Contact</a>
-      </div>
-      <div>
-        <a href="#Experience">Experience</a>
+    <div className={classes.root}>
+      <a href="/" className={classes.rightSide}>
+        Sridhar Katta
+      </a>
+      <div className={classes.rightSide}>
+        <a href="#Home" className={classes.rightSide}>
+          Home{" "}
+        </a>
+        <a href="#Experience" className={classes.rightSide}>
+          Experience
+        </a>
+        <a href="#skills" className={classes.rightSide}>
+          Skills
+        </a>
+        <a href="#Projects" className={classes.rightSide}>
+          Projects
+        </a>
+        <a href="#Contact" className={classes.rightSide}>
+          Contact
+        </a>
       </div>
     </div>
   );
@@ -46,31 +69,16 @@ function Navabar() {
 function Intro() {
   const classes = useIntroStyles();
   return (
-    <div className={classes.maincontent}>
-      <Typography variant="h5">Sridhar katta</Typography>
+    <div className={classes.maincontent} id="Home">
+      <Typography variant="h1">Hi, I am Sridhar katta</Typography>
+      <Typography variant="h2">Software Engineer</Typography>
       <br />
-      <Typography variant="h5">
+      <p>
         A developer, geek, enthusiast, who loves to solve problems and fix
-        things with technology.
-      </Typography>
+        things with technology.I am working on 💻frontend web development with
+        Javascript and I love contributing to 🌟 open source.
+      </p>
       <br />
-    </div>
-  );
-}
-
-const useAboutStyles = makeStyles({});
-
-function AboutMe() {
-  const classes = useAboutStyles();
-  return (
-    <div id="AboutMe">
-      <Typography variant="h5">What I hope to do</Typography>
-      <Typography>
-        My mission as a developer is to contribute to applications that empower
-        and improve lives. I believe that through code we can make the world a
-        better place by building products that empower communities. Yes, let's
-        change the world together!
-      </Typography>
     </div>
   );
 }
@@ -78,6 +86,33 @@ function AboutMe() {
 const useEXperienceStyles = makeStyles({
   root: {
     minHeight: "100vh",
+    margin: "auto 0px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "3.332rem",
+  },
+  mainSection: {
+    border: "1px solid #ddd",
+    borderRadius: "15px",
+    width: "60%",
+    display: "flex",
+    justifyContent: "space-around",
+  },
+  image: {
+    width: "170px",
+    height: "100px",
+    // margin: "20px",
+  },
+  subSection: {
+    margin: "40px",
+  },
+  title: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center ",
+    margin: "60px",
   },
 });
 
@@ -85,17 +120,22 @@ function Experience() {
   const classes = useEXperienceStyles();
   return (
     <div id="Experience" className={classes.root}>
-      <h4>Work Experience</h4>
-      <p>
+      <h4 className={classes.title}>
         I have worked for a number of projects. But, below are the corporate
         experiences that I have.
-      </p>
-      <div>
-        <p>Insert company logo </p>
-        <p>Cambridge Technologies</p>
+      </h4>
+      <div className={classes.mainSection}>
         <div>
+          <img
+            src="CTE-Logo.png"
+            alt="Company Logo"
+            className={classes.image}
+          />
+          <h4>Cambridge Technologies</h4>
+        </div>
+        <div className={classes.subSection}>
           <h4>Reacjs Developer</h4>
-          <p>Jan 2020 to April 20202</p>
+          <p>Jan 2020 - Present</p>
         </div>
       </div>
     </div>
