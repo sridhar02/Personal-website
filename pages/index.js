@@ -105,7 +105,28 @@ function Experience() {
 const useSkillsStyles = makeStyles({
   root: {
     minHeight: "100vh",
-    minWidth: "275",
+    margin: "auto 0px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "3.332rem",
+  },
+  mainSection: {
+    display: "flex",
+  },
+  subsection: {
+    width: "50%",
+    margin: "20px",
+  },
+  list: {
+    margin: "20px",
+  },
+  title: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center ",
+    margin: "60px",
   },
 });
 
@@ -113,20 +134,29 @@ function Skills() {
   const classes = useSkillsStyles();
   return (
     <div className={classes.root} id="skills">
-      <h2>Skills </h2>
-      <br />
-      <h4>Languages and Frameworks:</h4>
-      <p>
-        Javascript, HTML5, CSS3, React,Golang, Bootstrap, Node, Express,
-        MongoDB, Postgres, Cypress
-      </p>
-      <br />
-      <h4>IDE:</h4>
-      <p> Microsoft VS Code and Vim</p>
-      <h4>VCS:</h4>
-      <p>Git/Github</p>
-      <h4>Learning:</h4>
-      <p>Graphql and Type Script</p>
+      <h4 className={classes.title}>Skill set that you can expect from me.</h4>
+      <div className={classes.mainSection}>
+        <div className={classes.subsection}>
+          <h5>Languages & FrameWorks</h5>
+          <ul className={classes.list}>
+            <li>HTML</li>
+            <li> CSS</li>
+            <li>Javascript</li>
+            <li>Reactjs</li>
+            <li>Go lang</li>
+            <li>Nodejs</li>
+            <li>PSQL</li>
+          </ul>
+        </div>
+        <div className={classes.subsection}>
+          <h5>Trying to learn</h5>
+          <ul className={classes.list}>
+            <li>Graphql</li>
+            <li>Type Script</li>
+            <li>Vuejs</li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
@@ -134,6 +164,8 @@ function Skills() {
 const useProjectStyles = makeStyles({
   main: {
     minHeight: "100vh",
+    margin: "auto 0px",
+    padding: "3.332rem",
   },
   root: {
     display: "flex",
@@ -162,9 +194,9 @@ function Projects() {
   const classes = useProjectStyles();
   return (
     <div id="Projects" className={classes.main}>
-      <h5 className={classes.title}>These are some my personal projects</h5>
+      <h4 className={classes.title}>These are some my personal projects</h4>
       <div className={classes.root} id="projects">
-        <div className={classes.card}>
+        <div>
           <a href="https://issue-hub.now.sh/join" target="_blank">
             <img
               className={classes.image}
