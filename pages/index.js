@@ -137,13 +137,24 @@ const useProjectStyles = makeStyles({
   },
   root: {
     display: "flex",
-    // flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center ",
   },
-  card: {
-    width: "650px",
-    margin: "10px",
-    padding: "25px",
-    border: "1px solid black",
+  image: {
+    width: "350px",
+    height: "200px",
+    margin: "20px",
+    border: "2px solid #ddd",
+    borderRadius: "15px",
+  },
+  sourceCode: {
+    margin: "40px",
+  },
+  title: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center ",
+    margin: "60px",
   },
 });
 
@@ -151,60 +162,57 @@ function Projects() {
   const classes = useProjectStyles();
   return (
     <div id="Projects" className={classes.main}>
-      <h4>Projects</h4>
+      <h5 className={classes.title}>These are some my personal projects</h5>
       <div className={classes.root} id="projects">
         <div className={classes.card}>
-          <h4>Issue Tracker</h4>
-          <a href="https://issue-hub.now.sh/join">Live-website </a>
-          <img src="../images/project-1.png" alt="image of project-1" />
-          <p>Project overview: </p>
-          <ul>
-            <li>
-              This a project based on GitHub system where users can login which
-              have repositories, each repository have issues, issues have
-              comments, issues can lock, pinned, assigned and the repositories
-              can also have collaborators who have every permission that of
-              user.
-            </li>
-            <li>
-              The stack which has been used for this project are Nextjs for the
-              server-side rendering of frontend, Material-UI for the Styles,
-              Golang for API calls and PSQL for database.
-            </li>
-            <li>
-              The project is hosted using GCP for storage, Heruko for backend
-              API calls, and Zeit for the frontend.
-            </li>
-          </ul>
+          <a href="https://issue-hub.now.sh/join" target="_blank">
+            <img
+              className={classes.image}
+              src="../project-1.png"
+              alt="image of project-1"
+            />
+          </a>
+          <p className={classes.sourceCode}>
+            <h4>Issue Tracker Web app</h4>
+            <a
+              href="https://github.com/sridhar02/issue-tracker"
+              target="_blank"
+            >
+              Click here to see the source code
+            </a>
+          </p>
         </div>
         <div className={classes.card}>
-          <h4>Ecommerce website</h4>
-          <img src="../images/project-1.png" alt="image of project-1" />
-          <p>Project overview: </p>
-          <ul>
-            <li>
-              This project based on the Flipkart idea where users who can login
-              and logout, you can see the products on the main page which can
-              added to cart from the cart you can buy the products.
-            </li>
-            <li>
-              It is built on Nextjs, Reactjs for frontend, and Golang as
-              backend, material-UI as CSS library and PSQL as database.
-            </li>
-            <li>
-              The project is live using the GCP for storage, Heruko for backend
-              API calls, Zeit for the frontend.
-            </li>
-          </ul>
+          <a href="https://ecommerce.sridhar02.now.sh/products" target="_blank">
+            <img
+              src="../project-2.png"
+              alt="image of project-1"
+              className={classes.image}
+            />
+          </a>
+          <p className={classes.sourceCode}>
+            <h4>Ecommerce website</h4>
+            <a href="https://github.com/sridhar02/ecommerce" target="_blank">
+              Click here to see the source code
+            </a>
+          </p>
         </div>
         <div className={classes.card}>
-          <img src="../images/project-1.png" alt="image of project-1" />
-          <h4>Todo Application</h4>
-          <p>Project overview: </p>
-          <p>
-            This is a sample todo applicaion which was written using react hooks
-            ,state is managed using local browser state and it is deployed in
-            netlify.
+          <a href="https://todo-hooks-sridhar.netlify.app/" target="_blank">
+            <img
+              src="../project-3.png"
+              alt="image of project-1"
+              className={classes.image}
+            />
+          </a>
+          <p className={classes.sourceCode}>
+            <h4>Simple Todo Application</h4>
+            <a
+              href="https://github.com/sridhar02/Sample-todoapp-with-react-Hooks"
+              target="_blank"
+            >
+              Click here to see the source code
+            </a>
           </p>
         </div>
       </div>
@@ -272,7 +280,7 @@ function Contact() {
         </a>
         <a
           className={classes.anchor}
-          href="https://twitter.com/sridhar_K_1997"
+          href="https://twitter.com/ksridhar02"
           target="_blank"
         >
           <TwitterIcon className={classes.icons} />
