@@ -134,7 +134,7 @@ function Experience() {
           <h4>Cambridge Technologies</h4>
         </div>
         <div className={classes.subSection}>
-          <h4>Reacjs Developer</h4>
+          <h4>Javascript Developer</h4>
           <p>Jan 2020 - Present</p>
         </div>
       </div>
