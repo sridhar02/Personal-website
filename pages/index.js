@@ -1,4 +1,4 @@
-import react from "react";
+import react, { Fragment } from "react";
 
 import Grid from "@material-ui/core/Grid";
 import { Typography, makeStyles } from "@material-ui/core";
@@ -8,23 +8,19 @@ import MailIcon from "@material-ui/icons/Mail";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
-// import project from "../images/"
+import { FaHtml5 } from "react-icons/fa";
+import { FaCss3Alt } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io";
+import { FaReact } from "react-icons/fa";
+import { FaNodeJs } from "react-icons/fa";
+import { DiPostgresql } from "react-icons/di";
 
-const useIntroStyles = makeStyles({
-  maincontent: {
-    minHeight: "100vh",
-    marginTop: "50px",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
+// import project from "../images/"
 
 const useNavbarStyles = makeStyles({
   root: {
     display: "flex",
-    margin: "10px auto",
+    padding: "10px auto",
     justifyContent: "space-between",
   },
   rightSide: {
@@ -66,19 +62,32 @@ function Navabar() {
   );
 }
 
+const useIntroStyles = makeStyles({
+  maincontent: {
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
+
 function Intro() {
   const classes = useIntroStyles();
   return (
-    <div className={classes.maincontent} id="Home">
-      <Typography variant="h1">Hi, I am Sridhar katta</Typography>
-      <Typography variant="h2">Software Engineer</Typography>
-      <br />
-      <p>
-        A developer, geek, enthusiast, who loves to solve problems and fix
-        things with technology.I am working on 💻frontend web development with
-        Javascript and I love contributing to 🌟 open source.
-      </p>
-      <br />
+    <div className={classes.root}>
+      <Navabar />
+      <div className={classes.maincontent} id="Home">
+        <Typography variant="h1">Hi, I am Sridhar katta</Typography>
+        <Typography variant="h2">Software Engineer</Typography>
+        <br />
+        <p>
+          A developer, geek, enthusiast, who loves to solve problems and fix
+          things with technology.I am working on 💻frontend web development with
+          Javascript and I love contributing to 🌟 open source.
+        </p>
+        <br />
+      </div>
     </div>
   );
 }
@@ -86,12 +95,11 @@ function Intro() {
 const useEXperienceStyles = makeStyles({
   root: {
     minHeight: "100vh",
-    margin: "auto 0px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    padding: "3.332rem",
+    // padding: "3.332rem",
   },
   mainSection: {
     border: "1px solid #ddd",
@@ -145,28 +153,32 @@ function Experience() {
 const useSkillsStyles = makeStyles({
   root: {
     minHeight: "100vh",
-    margin: "auto 0px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    padding: "3.332rem",
+    // padding: "3.332rem",
   },
   mainSection: {
     display: "flex",
+    flexDirection: "column",
   },
   subsection: {
-    width: "50%",
-    margin: "20px",
+    // width: "50%",
+    // margin: "20px",
   },
   list: {
-    margin: "20px",
+    // margin: "20px",
   },
   title: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center ",
     margin: "60px",
+  },
+  icons: {
+    fontSize: "75px",
+    margin: "50px",
   },
 });
 
@@ -178,24 +190,22 @@ function Skills() {
       <div className={classes.mainSection}>
         <div className={classes.subsection}>
           <h5>Languages & FrameWorks</h5>
-          <ul className={classes.list}>
-            <li>HTML</li>
-            <li> CSS</li>
-            <li>Javascript</li>
-            <li>Reactjs</li>
-            <li>Go lang</li>
-            <li>Nodejs</li>
-            <li>PSQL</li>
-          </ul>
+          <FaHtml5 className={classes.icons} />
+          <FaCss3Alt className={classes.icons} />
+          <IoLogoJavascript className={classes.icons} />
+          <FaReact className={classes.icons} />
+          <FaNodeJs className={classes.icons} />
+          <DiPostgresql className={classes.icons} />
+          <div>Go lang</div>
         </div>
-        <div className={classes.subsection}>
+        {/* <div className={classes.subsection}>
           <h5>Trying to learn</h5>
           <ul className={classes.list}>
             <li>Graphql</li>
             <li>Type Script</li>
             <li>Vuejs</li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -204,13 +214,13 @@ function Skills() {
 const useProjectStyles = makeStyles({
   main: {
     minHeight: "100vh",
-    margin: "auto 0px",
-    padding: "3.332rem",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center ",
   },
   root: {
     display: "flex",
-    justifyContent: "center",
-    alignItems: "center ",
   },
   image: {
     width: "350px",
@@ -226,7 +236,7 @@ const useProjectStyles = makeStyles({
     display: "flex",
     justifyContent: "center",
     alignItems: "center ",
-    margin: "60px",
+    // margin: "60px",
   },
 });
 
@@ -235,7 +245,7 @@ function Projects() {
   return (
     <div id="Projects" className={classes.main}>
       <h4 className={classes.title}>These are some my personal projects</h4>
-      <div className={classes.root} id="projects">
+      <div className={classes.root}>
         <div>
           <a href="https://issue-hub.now.sh/join" target="_blank">
             <img
@@ -295,12 +305,11 @@ function Projects() {
 const useContactStyles = makeStyles({
   root: {
     minHeight: "100vh",
-    margin: "auto 0px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    padding: "3.332rem",
+    // padding: "3.332rem",
   },
   icons: {
     fontSize: "75px",
@@ -375,11 +384,6 @@ function Contact() {
 function App() {
   return (
     <Grid container>
-      <Grid container>
-        <Grid item md={12}>
-          <Navabar />
-        </Grid>
-      </Grid>
       <Grid container>
         <Grid item md={12}>
           <Intro />
