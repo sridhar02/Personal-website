@@ -371,7 +371,7 @@ function Contact() {
       <p>
         You can view my resume by clicking{" "}
         <a
-          href="https://drive.google.com/file/d/1HNFiw7AdiypVvrfRk-DTa_yvxv3sxQbN/view?usp=sharing"
+          href="../resume.pdf"
           target="_blank"
         >
           here.
