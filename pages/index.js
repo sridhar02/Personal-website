@@ -196,7 +196,7 @@ function Skills() {
           <FaReact className={classes.icons} />
           <FaNodeJs className={classes.icons} />
           <DiPostgresql className={classes.icons} />
-          <div>Go lang</div>
+          {/* <div>Go lang</div> */}
         </div>
         {/* <div className={classes.subsection}>
           <h5>Trying to learn</h5>
